@@ -1,0 +1,53 @@
+! Title: Ansul's Ad Filters
+! Description: Some of these filters make use of the `important` filter option,
+!              which purpose is to guarantee that a filter won't be overriden by
+!              exception filters.
+! Expires: 4 days
+! Licence: https://github.com/uBlockOrigin/uAssets/blob/master/LICENSE
+! Homepage: https://github.com/ansul1001/Ansul-s-Ad-Filters.git
+!Facebook
+!
+facebook.com##:xpath(//div[starts-with(@id, 'pagelet') and (.//a[.='Sponzorováno'])]  )
+facebook.com###pagelet_ego_pane
+facebook.com###pagelet_video_home_watch_list_rhc
+facebook.com##.userContentWrapper:if(span:matches-css-after(content: "Navrhovaný příspěvek";))
+facebook.com###pagelet_marketplace_recently_viewed_rhc
+facebook.com###pagelet_ego_contextual_group
+facebook.com##div[data-pagelet^="FeedUnit"]:has-text(/Navrhovaná událost|Návrh pro vás/)
+facebook.com##div[data-pagelet="FeedUnit_}"]:has-text(/Navrhovaná událost|Návrh pro vás/)
+facebook.com##[role="feed"] span[id] a[href="#"] :matches-css(display: none):remove()
+facebook.com##[role="feed"] span[id] a[href="#"] :matches-css(position: absolute):remove()
+facebook.com##[role="feed"]>div:has-text(Sponzorováno)
+facebook.com##[role="feed"]>div:has-text(Shop)
+!Yelp
+!
+www.yelp.com##li.border-color--default__373c0__2oFDT.lemon--li__373c0__1r9wz:nth-of-type(2) > .border-color--default__373c0__2oFDT.u-padding-b3.u-padding-t3.lemon--div__373c0__1mboc
+www.yelp.com##li.border-color--default__373c0__2oFDT.lemon--li__373c0__1r9wz:nth-of-type(1) > .border-color--default__373c0__2oFDT.lemon--div__373c0__1mboc > .border-color--default__373c0__2oFDT.u-padding-b1.u-padding-t1.lemon--div__373c0__1mboc
+www.yelp.com##li.border-color--default__373c0__2oFDT.lemon--li__373c0__1r9wz:nth-of-type(3) > .border-color--default__373c0__2oFDT.border--top__373c0__19Owr.u-padding-b3.u-padding-t3.lemon--div__373c0__1mboc
+www.yelp.com##li.border-color--default__373c0__2oFDT.lemon--li__373c0__1r9wz:nth-of-type(4) > .border-color--default__373c0__2oFDT.border--top__373c0__19Owr.u-padding-b3.u-padding-t3.lemon--div__373c0__1mboc
+!Duck Duck Go
+!
+duckduckgo.com##.js-badge-link.ddg-extension-hide.badge-link--fadein.badge-link--top.badge-link
+duckduckgo.com##.js-badge-link.ddg-extension-hide.badge-link--serp.badge-link
+duckduckgo.com/d2654.js
+duckduckgo.com/util/u372.js
+duckduckgo.com/locale/en_US/duckduckgo14.js
+duckduckgo.com/lib/l113.js
+!drivetribe
+! 
+drivetribe.com##.hyBTKR.sc-DNdyV
+drivetribe.com##.fnrkLU.sc-ipZHIp
+drivetribe.com##.kxTRAT.sc-cqPOvA
+drivetribe.com##.bbpyed.sc-cqPOvA
+drivetribe.com##.PuJAk.sc-hwcHae
+drivetribe.com##.dfEzpW.sc-hwcHae
+!Weatherbug
+!
+https://cdn.taboola.com/libtrc/weatherbug-weatherbug/loader.js
+https://acdn.adnxs.com/ast/ast.js
+https://polyfill.io/v3/polyfill.min.js?flags=gated
+https://content.jwplatform.com/libraries/2K0cYisN.js
+https://rhetoricalloss.com/v2/0/lpvJm3_RkcS-vr_qgSHMbYB-jcbRkH2oNRB2URpg6t2W3jP_TPy9Na4D7qHs5MdytwG
+!Reddit
+!
+reddit.com##.scrollerItem:has-text(livestream)
